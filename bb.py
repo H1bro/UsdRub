@@ -12,7 +12,7 @@ class S(BaseHTTPRequestHandler):
                 self.send_header('Content-Type', 'application/json')
                 self.end_headers()
                 usd = {'usd': int(recordID),
-                       'rub': format(value_rub, '.4f')
+                       'rub': float(format(value_rub, '.4f'))
                        }
                 self.wfile.write(bytes(json.dumps(usd), 'UTF-8'))
             else:
